@@ -1,5 +1,6 @@
 var readline = require('readline');
 var rl = readline.createInterface(process.stdin, process.stdout);
+var r2 = readline.createInterface(process.stdin, process.stdout);
 var placarpc = 0;
 var placaruser = 0;
 
@@ -8,9 +9,9 @@ rl.prompt();
 rl.on('line', function(escolha) {
     if (escolha == 1){
         
-        rl.setPrompt('Você escolhe 1 ou 0> ');
-        rl.prompt();
-        rl.on('linenjnknk', function(line) {
+        r2.setPrompt('Você escolhe 1 ou 0> ');
+        r2.prompt();
+        r2.on('linenjnknk', function(line) {
             var lancedopc = Math.round(Math.random());
         
             if (line == lancedopc){
@@ -27,8 +28,8 @@ rl.on('line', function(escolha) {
             if(placaruser >= 3){
                 console.log("O usuário venceu!");
             }
-            if(placarpc >= 3 || placaruser >= 3) rl.close();
-            rl.prompt();
+            if(placarpc >= 3 || placaruser >= 3) r2.close();
+            r2.prompt();
         
         })
     }
